@@ -1,0 +1,26 @@
+version: "3"
+services:
+  php:
+    image: php:8.2.4
+    container_name: meu_php
+    restart: always
+    volumes:
+      - ./projeto-teste:/var/www/html  
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    container_name: meu_postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
