@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
 class TecnologiaController extends Controller
 {
-    public function ExibirNome()
-    {
+   public function index(){
 
-        return "PHP Laravel";
+    $nome = [
+        'nome' => 'Laravel'
+    ];
 
-    }
+    return response() -> json($nome, 200);
 
+   }
 }
+
 

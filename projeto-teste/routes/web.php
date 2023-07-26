@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/nome-da-tecnologia', [TecnologiaController::class, 'ExibirNome']);
+Route::get('/tecnologia', [TecnologiaController::class, 'index']);
